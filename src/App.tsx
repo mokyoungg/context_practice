@@ -1,12 +1,27 @@
-import React from 'react';
-import Practice from './Practice';
+import React, { useState, useContext } from 'react';
+import Button from './Button';
+import Title from './Title';
+import Message from './Message';
+import LangContext from './LangContext';
 
-function App() {
+const App: React.FC = () => {
+  const [lang, setLang] = useState<string>('kor');
+
+  const toggleLang = (lang: string) => {
+    if (lang === 'en') {
+      setLang('kor');
+    } else {
+      setLang('en');
+    }
+  };
+
   return (
-    <div>
-      <Practice />
-    </div>
+    <LangContext.Provider value={lang}>
+      <Button toggleLang={toggleLang} />
+      <Title />
+      <Message />
+    </LangContext.Provider>
   );
-}
+};
 
 export default App;

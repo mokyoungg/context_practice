@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Practice: React.FC = () => {
-  return <div>연습</div>;
+const Practice = () => {
+  return <div>Practice</div>;
 };
 
 export default Practice;
